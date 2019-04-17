@@ -3,5 +3,6 @@ class LoginController < ApplicationController
   end
 
   def create
+    
   end
 end
