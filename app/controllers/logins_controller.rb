@@ -19,4 +19,7 @@ class LoginsController < ApplicationController
     redirect_to '/'
   end
 
+
+
+
 end
