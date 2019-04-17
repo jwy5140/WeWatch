@@ -5,12 +5,12 @@ class LoginsController < ApplicationController
   end
 
   def create
-    @user = User.find_by(username: params[:user][:username])
-    if !@user.authenticate(params[:user][:username])
-      render :new_login_path
+    @user = User.find_by(username: params[:username])
+    if !@user.authenticate(params[:password])
+      render :new
     else
       session[:user_id] = @user.id
-      redirect_to user_path
+      redirect_to user_path(@user)
     end
   end
 
