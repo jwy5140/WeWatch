@@ -1,5 +1,3 @@
-<h1>WHAT UP <%=@user.name%></h1>
-<h2>What's on the big screen, big <%=@user.name%>?</h2>
-<%=link_to "Edit Profile", edit_user_path(@user)%>
-<%=link_to "Log Out", login_path, method: :delete %>
-<%=link_to "Delete Account", user_path(@user), method: :delete%>
+<h1>Hello!</h1>
+<h2>What's on the big screen,<%=@user.name%>?</h2>
+<%=link_to "Edit Profile", edit_user_path(@user)%> | <%=link_to "Log Out", login_path, method: :delete %> | <%=link_to "Delete Account", user_path(@user), method: :delete%>

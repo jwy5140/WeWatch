@@ -2,15 +2,18 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    render :new
   end
 
   def create
     @user = User.new(user_params(:name, :username, :age, :email, :password, :password_confirmation))
     if @user.valid?
+      flash[:notification] = "Success! You're a new user."
        @user = User.create(user_params(:name, :username, :age, :email, :password, :password_confirmation))
        session[:user_id] = @user.id
        redirect_to user_path(@user)
     else
+        flash[:warning] = "Error. Please try again."
        render :new
     end
   end
