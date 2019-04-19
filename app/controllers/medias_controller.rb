@@ -1,3 +1,0 @@
-class Medias < ApplicationController 
-    
-end

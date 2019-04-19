@@ -1,0 +1,9 @@
+<h1><%=@medium.title%></h1>
+<h2>Genres: <%=@medium.genres%></h2>
+<%if @medium.runtime != "\N"%>
+    <h2>Runtime: <%=@medium.runtime%> minutes</h2>
+<%else%>
+    <h2>Runtime: N/A</h2>
+<%end%>
+<h2>Release Year: <%=@medium.release_year%></h2>
+<h2>IMDB Rating: <%=@medium.rating%>/10 from <%=@medium.rating_votes%> votes.</h2>
