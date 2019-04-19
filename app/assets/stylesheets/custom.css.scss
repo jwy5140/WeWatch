@@ -1,0 +1,111 @@
+$navbar-default-bg: #1abc9c;
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body {
+    background-color: black;
+    color: #fff;
+}
+
+#logo {
+    float: left;
+    font-size: 1.7em;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+
+#logo:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+.center {
+    text-align: center
+}
+
+.jumbotron {
+    background-image: url('https://i.imgur.com/DnIoUvN.jpg');
+    background-size: cover;
+    height: 550px;
+}
+
+.jumbotron h1 {
+    color: #fff;
+    text-align: center; 
+    margin-bottom: 30px;
+    font-weight: bold; 
+}
+
+.btn-xlarge {
+    font-size: 1.5em;
+    background-color: black;
+
+
+}
+
+.footer {
+    margin-top: 40px;
+    padding-top: 5px;
+    border-top: 1px solid #1abc9c;
+}
+
+.carousel {
+	margin-bottom: 0;
+	padding: 0 40px 30px 40px;
+}
+
+.carousel .carousel-control {
+	left: 0;
+	width: 40px;
+	height: 40px;
+	margin-top: 63.5px;
+	border: 4px solid #fff;
+	border-radius: 23px 23px 23px 23px;
+	background: #d01f76;
+}
+
+.carousel .carousel-control.right {
+	right: 0;
+	left: auto;
+}
+
+.carousel .carousel-indicators {
+	top: auto;
+	right: 50%;
+	bottom: -10px;
+	margin-right: -19px;
+}
+
+.carousel .carousel-indicators li {
+	background: #cecece;
+}
+
+.carousel .carousel-indicators .active {
+	background: #d01f76;
+}
+
+.carousel .item .row {
+	clear: both;
+	margin: 0;
+}
+
+.carousel .item .item__element {
+	float: left;
+	width: 33.33333333%;
+	padding: 5px 10px;
+	text-align: center;
+}
+
+.carousel .item .item__element img {
+	display: block;
+	margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+	.carousel .item .item__element {
+		width: 16.66666667%;
+	}
+}

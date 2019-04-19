@@ -1,0 +1,5 @@
+<h1>Search Results</h1>
+<h3>Total Results:<%=@media.count%></h3>
+<%@media.each do |m| %>
+<p><%=link_to "#{m.title}", medium_path(m)%> (<%=m.release_year%>)</p>
+<%end %>

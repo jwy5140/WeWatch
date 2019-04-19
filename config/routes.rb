@@ -3,5 +3,9 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   resources :logins, only: [:new, :create, :destroy]
+  resources :media, only: [:index, :show]
+  resources :faves, only: [:create, :destroy, :update]
+
+  post "/media", to: "media#index", as: "search_media"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

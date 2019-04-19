@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2019_04_16_210538) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "faves", force: :cascade do |t|
     t.integer "user_id"
     t.integer "media_id"
@@ -20,8 +23,11 @@ ActiveRecord::Schema.define(version: 2019_04_16_210538) do
 
   create_table "media", force: :cascade do |t|
     t.string "title"
-    t.string "genre"
-    t.integer "runtime"
+    t.string "genres"
+    t.string "runtime"
+    t.string "release_year"
+    t.string "rating"
+    t.string "rating_votes"
   end
 
   create_table "users", force: :cascade do |t|
