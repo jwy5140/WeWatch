@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
-    has_many :faves
-    has_many :medias, through: :faves
+    has_many :favorites
+    has_many :medias, through: :favorites
 
     validates :username, presence: true,
               uniqueness: {case_sensitive: false},

@@ -4,3 +4,16 @@
 <h2>Release Year: <%=@medium.release_year%></h2>
 <h2>IMDB Rating: <%=@medium.rating%>/10 from <%=@medium.rating_votes%> votes.</h2>
 
+<%if session[:user_id] && !User.find(session[:user_id]).favorites.include?(@medium)%>
+<%=form_tag('/favorites', method: "post", action: "create") do%>
+<%=hidden_field_tag(:medium_id, value=@medium.id)%>
+<%=hidden_field_tag(:user_id, value=session[:user_id])%>
+<%=radio_button_tag(:fave_or_wish, value=true)%>
+<%=label_tag(:fave_or_wish, "Add movie to your favorites.")%>
+<br>
+<%=radio_button_tag(:fave_or_wish, value=false)%>
+<%=label_tag(:fave_or_wish, "Add movie to your watchlist.")%>
+<br>
+<%=submit_tag("Add it!")%>
+<%end%>
+<%end%>

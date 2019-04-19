@@ -1,6 +1,10 @@
 <div class="center jumbotron">
-<h1>Welcome to WeWatch</h1>
+<h1>Welcome to WeWatch!</h1>
+	<%if !session[:user_id]%>
     <%= link_to "Sign Up Now", new_user_path, class: "btn btn-danger btn-lg btn-xlarge" %> 
+	<%else%>
+	<h1>Hello <%=User.find(session[:user_id]).name%>!</h1>
+	<%end%>
 </div>
 
 <h2 align="center">Sign Up to Build Movie List</h2>
@@ -27,7 +31,7 @@
 					</div>
 
 					<div class="item__element">
-						<img src="https://images.moviepostershop.com/rampage-movie-poster-1000778165.jpg" alt="Item element image" class="img-responsive">
+						<img src="https://i.imgur.com/30fnWXb.jpg" alt="Item element image" class="img-responsive">
 					</div>
 
 					<div class="item__element">
@@ -87,7 +91,7 @@
 					</div>
 
 					<div class="item__element">
-						<img src="https://www.ignant.com/wp-content/uploads/2014/05/animated_movie_posters_03.gif" alt="Item element image" class="img-responsive">
+						<img src="https://m.media-amazon.com/images/M/MV5BMTkwOTQ4OTg0OV5BMl5BanBnXkFtZTgwMzQyOTM0OTE@._V1_UX182_CR0,0,182,268_AL_.jpg" alt="Item element image" class="img-responsive">
 					</div>
 				</div>
 			</div>

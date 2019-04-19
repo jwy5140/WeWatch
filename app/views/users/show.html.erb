@@ -1,9 +1,23 @@
 <h1>Hello!</h1>
-<h2>What's on the big screen,<%=@user.name%>?</h2>
+<h2>What's on the big screen, <%=@user.name%>?</h2>
 <%=link_to "Edit Profile", edit_user_path(@user)%> | <%=link_to "Log Out", login_path, method: :delete %> | <%=link_to "Delete Account", user_path(@user), method: :delete%>
 
 
 <h2>Faves</h2>
+<ul>
+<%@user.favorites.each do |f|%>
+    <%if f.fave_or_wish == true%>
+        <li><%=link_to "#{f.medium.title} (#{f.medium.release_year})", medium_path(f.medium)%> &emsp;&emsp; <%=link_to "Remove From Favorites", favorite_path(f), method: :delete%></li>
+    <%end%>
+<%end%>
+</ul>
 
 
 <h2>WatchList</h2>
+<ul>
+<%@user.favorites.each do |f|%>
+    <%if f.fave_or_wish == false%>
+        <li><%=link_to "#{f.medium.title} (#{f.medium.release_year})", medium_path(f.medium)%> &emsp;&emsp; <%=link_to "Move To Favorites", favorite_path(f), method: :patch%> &emsp;&emsp; <%=link_to "Remove From Watchlist", favorite_path(f), method: :delete%></li>
+    <%end%>
+<%end%>
+</ul>
