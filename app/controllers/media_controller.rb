@@ -1,9 +1,9 @@
 class MediaController < ApplicationController
     def index
-        @media = Media.where("title LIKE (?)", "%#{params[:query]}%")
+        @media = Medium.where("title LIKE (?)", "%#{params[:query]}%")
     end
 
     def show
-        @medium = Media.find(params[:id])
+        @medium = Medium.find(params[:id])
     end
 end
